@@ -1,0 +1,24 @@
+/* pallete*/
+
+:root {
+
+    --clrPrimary6: #ffffff;
+    --clrPrimary55: #f8f8f8;
+    --clrPrimary5: #e1e0e0;
+    --clrPrimary4: #c2c1c1;
+    --clrPrimary3: #c2c2c2;
+    --clrPrimary22: #e5e5e5;
+    --clrPrimary2: #a6a6a6;
+    --clrPrimary15: #939292;
+    --clrPrimary1: #818181;
+    --clrPrimaryBase: #606060;
+    --clrPrimary-1: #4f4e4e;
+    --clrPrimary-2: #292929;
+    --clrPrimary-3: #1d1d1d;
+
+    --clrSecondaryBase: #58c93a;
+
+    /* LOGO */
+    --clrFacebook: #4267B2;
+    --clrTwitter: #1DA1F2;
+}

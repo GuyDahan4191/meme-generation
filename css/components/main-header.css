@@ -1,0 +1,36 @@
+.main-header {
+    height: 130px;
+    background-color: var(--clrPrimary-2);
+    box-shadow: inset 0 -6px 0 var(--clrPrimary-2);
+    grid-auto-flow: column;
+}
+
+.main-header .logo {
+    font-family: eurofurence;
+    font-size: 2.5em;
+    color: var(--clrPrimary6);
+    letter-spacing: -0.05em;
+}
+
+.logo span {
+    color: var(--clrSecondaryBase);
+}
+
+.main-nav>li {
+    border-inline-start: 1px solid var(--clrPrimary-3);
+}
+
+.main-header .main-nav>li:last-child {
+    border-inline-end: 1px solid var(--clrPrimary-3);
+}
+
+.main-nav a {
+    display: flex;
+    font-family: lato-bold;
+    align-items: center;
+    justify-content: center;
+    width: 131px;
+    height: 130px;
+    border-left: 1px solid var(--clrPrimary-3);
+    text-shadow: 0 1px 0 var(--clrPrimary-3);
+}

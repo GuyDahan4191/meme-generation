@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Meme Generator</title>
+</head>
+
+<!-- <body onload="onInit()"> -->
+
+<body onload="onInitMeme()">
+
+    <header class="main-header full main-layout">
+        <div class="main-header-container flex space-between align-center">
+            <div class="logo">Meme Generator</div>
+            <nav class="main-nav-container">
+                <ul class="main-nav flex clean-list">
+                    <li><a href="#">Gallery</a></li>
+                    <li><a href="#">My-Memes</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- <button class="btn-toggle-menu" onclick="toggleMenu()">☰</button> -->
+    </header>
+
+    <main class="main-content">
+
+        <section class="gallery">
+            <div class="gallery-imgs grid"></div>
+        </section>
+
+        <section class="meme-editor">
+            <div class="canvas-container">
+                <canvas id="my-canvas" height="400" width="400">
+                </canvas>
+            </div>
+
+            <div class="toolbar-container">
+                <section>
+                    <input oninput="onSetLineTxt(this.value)" type="text" name="text"
+                        placeholder="Enter your text here">
+                </section>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="js/services/storage-service.js"></script>
+    <script src="js/services/utils-service.js"></script>
+    <script src="js/services/gallery-service.js"></script>
+    <script src="js/services/meme-service.js"></script>
+    <script src="js/services/utils-service.js"></script>
+    <script src="js/gallery-controller.js"></script>
+    <script src="js/meme-controller.js"></script>
+</body>
+
+</html>
