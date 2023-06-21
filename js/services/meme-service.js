@@ -16,7 +16,7 @@ const TOUCH_EVS = ['touchstart', 'touchmove', 'touchend']
 
 /////////////////////////// set functions  ///////////////////////////
 
-function setCurrImage(imgIdx) {
+function setImg(imgIdx) {
     gMeme.selectedImgId = imgIdx
 }
 

@@ -8,18 +8,18 @@
     <title>Meme Generator</title>
 </head>
 
-<!-- <body onload="onInit()"> -->
+<body onload="onInit()">
 
-<body onload="onInitMeme()">
+    <!-- <body onload="onInitMeme()"> -->
 
     <header class="main-header full main-layout">
         <div class="main-header-container flex space-between align-center">
             <div class="logo">Meme Generator</div>
             <nav class="main-nav-container">
                 <ul class="main-nav flex clean-list">
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">My-Memes</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="#" onclick="onDisplayCurrPage('.main-gallery')">Gallery</a></li>
+                    <li><a href="#" onclick="onDisplayCurrPage('.main-my-memes')">My-Memes</a></li>
+                    <li><a href="#" onclick="onDisplayCurrPage('.main-about')">About</a></li>
                 </ul>
             </nav>
         </div>
@@ -28,11 +28,11 @@
 
     <main class="main-content">
 
-        <section class="gallery">
+        <section class="main-section main-gallery">
             <div class="gallery-imgs grid"></div>
         </section>
 
-        <section class="meme-editor">
+        <section class="main-section main-meme-editor">
             <div class="canvas-container">
                 <canvas id="my-canvas" height="400" width="400">
                 </canvas>
@@ -45,6 +45,14 @@
                 </section>
 
             </div>
+        </section>
+
+        <section class="main-section main-my-memes">
+
+        </section>
+
+        <section class="main-section main-about">
+            <p>This app was build by Guy Dahan in 2 days on 0 sleeping hours. Viva la Sprint</p>
         </section>
     </main>
 

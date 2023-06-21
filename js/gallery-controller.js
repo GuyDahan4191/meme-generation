@@ -4,6 +4,7 @@
 
 function onInit() {
     renderGallery()
+
 }
 
 //////////////////////////////////  render  ////////////////////////////////
@@ -11,8 +12,8 @@ function onInit() {
 function renderGallery() {
     const imgs = getGalleryImages()
     const strHTMLs = imgs.map((img, i) =>
-        `<article class="img" onclick="onImgSelect(${i})">
-            <img class="image${i}" src="${img.url}">
+        `<article class="img" onclick="onImgSelect(${i + 1})">
+            <img class="image${i + 1}" src="${img.url}">
         </article>`
     )
     const elImg = document.querySelector('.gallery-imgs')
@@ -22,8 +23,15 @@ function renderGallery() {
 //////////////////////////////////  on function  ////////////////////////////////
 
 function onImgSelect(imgIdx) {
-    setCurrImage(imgIdx)
+    setImg(imgIdx)
     onInitMeme()
-    resizeCanvas(imgIdx)
+    onDisplayPage('.main-meme-editor')
+}
+
+function onDisplayPage(currSectionClass) {
+    document.querySelectorAll('.main-section').forEach(elMainSection => {
+        elMainSection.classList.add('none')
+    })
+    document.querySelector(`${currSectionClass}`).classList.remove('none')
 }
 

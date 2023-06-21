@@ -23,6 +23,8 @@ var gImgs = [
     { id: 18, url: `img/18.jpg`, keyWords: ['movie', 'serious'] },
 ]
 
+/////////////////////////// get functions  ///////////////////////////
+
 function getGalleryImages() {
     return gImgs
 }

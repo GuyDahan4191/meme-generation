@@ -6,7 +6,7 @@ let gCtx
 ////////////////////////////////////  init  //////////////////////////////////
 
 function onInitMeme() {
-    resizeCanvas()
+    // resizeCanvas()
     setCanvas()
     renderMeme()
     // addListeners()
@@ -19,8 +19,7 @@ function renderMeme() {
     renderImg(meme.selectedImgId)
     setTimeout(() => {
         renderLines(meme)
-    }, 100);
-
+    }, 50);
 }
 
 function renderImg(idx) {
