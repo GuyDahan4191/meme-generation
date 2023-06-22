@@ -4,7 +4,7 @@
 
 function onInit() {
     renderGallery()
-
+    onDisplayCurrPage('.main-gallery')
 }
 
 //////////////////////////////////  render  ////////////////////////////////
@@ -25,10 +25,10 @@ function renderGallery() {
 function onImgSelect(imgIdx) {
     setImg(imgIdx)
     onInitMeme()
-    onDisplayPage('.main-meme-editor')
+    onDisplayCurrPage('.main-meme-editor')
 }
 
-function onDisplayPage(currSectionClass) {
+function onDisplayCurrPage(currSectionClass) {
     document.querySelectorAll('.main-section').forEach(elMainSection => {
         elMainSection.classList.add('none')
     })

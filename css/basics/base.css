@@ -10,3 +10,11 @@ body {
     margin: 20px;
     background-color: lightsalmon;
 }
+
+.btn {
+    display: flex;
+    width: 4rem;
+    height: 4rem;
+    align-items: center;
+    justify-content: center;
+}

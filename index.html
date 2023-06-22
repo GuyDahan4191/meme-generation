@@ -10,8 +10,6 @@
 
 <body onload="onInit()">
 
-    <!-- <body onload="onInitMeme()"> -->
-
     <header class="main-header full main-layout">
         <div class="main-header-container flex space-between align-center">
             <div class="logo">Meme Generator</div>
@@ -38,10 +36,44 @@
                 </canvas>
             </div>
 
-            <div class="toolbar-container">
+            <div class="toolbar-container flex">
                 <section>
-                    <input oninput="onSetLineTxt(this.value)" type="text" name="text"
-                        placeholder="Enter your text here">
+                    <section class="line">
+                        <input oninput="onSetLineTxt(this.value)" type="text" name="text"
+                            placeholder="Enter your text here">
+
+                        <label for="color">Fill Color: </label>
+                        <input type="color" class="clrFill" name="clrFill" value="#ffffff"
+                            oninput="onPickFillColor(this.value)">
+
+                        <button title="Add line" class="btn" onclick="onAddLine()">Add line</button>
+                        <button title="Delete line" class="btn" onclick="onDeleteLine()">Delete line</button>
+
+                        <button title="Increase size" class="btn" onclick="onChangeSize(5)">increase</button>
+                        <button title="Decrease size" class="btn" onclick="onChangeSize(-5)">decrease</button>
+
+                        <button title="Text LTR" class="btn" onclick="onChangeTextAlign('LTR')">LTR</button>
+                        <button title="Text CENTER" class="btn" onclick="onChangeTextAlign('CENTER')">CENTER</button>
+                        <button title="Text RTL" class="btn" onclick="onChangeTextAlign('RTL')">RTL</button>
+
+                        <select title="Choose Font" class="font-select" placeholder="Impact"
+                            oninput="onFontChange(this.value)" title="font select">
+                            <option value="impact">Impact</option>
+                            <option value="arial">Arial</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                        </select>
+
+                    </section>
+                    <section class="download-canvas">
+                        <!-- when click the link run downloadCanvas -->
+                        <a href="#" class="btn" onclick="onDownloadMeme(this)" download="my-meme.jpg">
+                            <button title="Download Meme" class="btn">download
+                            </button></a>
+                    </section>
+                    <section class="facebook-upload">
+                        <button title="Share Meme on Facebook" class="btn" onclick="onUploadImg()">share to
+                            facebook</button>
+                    </section>
                 </section>
 
             </div>
