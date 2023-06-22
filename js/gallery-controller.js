@@ -35,3 +35,7 @@ function onDisplayCurrPage(currSectionClass) {
     document.querySelector(`${currSectionClass}`).classList.remove('none')
 }
 
+function onMemeSelect() {
+    onInitMeme()
+    onDisplayCurrPage('.main-meme-editor')
+}

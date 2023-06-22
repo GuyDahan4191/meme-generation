@@ -76,13 +76,13 @@ function drawImg(idx) {
 }
 
 function drawText(line, direction = 'center') {
-    console.log('line.txt:', line.txt)
-    console.log('line.size:', line.size)
-    console.log('line.color:', line.color)
+    // console.log('line.txt:', line.txt)
+    // console.log('line.size:', line.size)
+    // console.log('line.color:', line.color)
     console.log('line.pos.y:', line.pos.y)
-    console.log('gCtx:', gCtx)
+    // console.log('gCtx:', gCtx)
 
-    const y = line.pos.y + gMeme.selectedLineIdx * 50
+    const y = line.pos.y
     // const x = line.pos.x
     const x = (gElCanvas.width / 2)
     gCtx.lineWidth = 1
@@ -117,7 +117,7 @@ function addLine() {
         txt: 'Enter text',
         size: 40,
         color: 'red',
-        pos: { x: 200, y: 20 + gLineGap },
+        pos: { x: 200, y: 20 + (gMeme.lines.length) * 50 },
         font: 'Impact'
     })
     console.log('gLineGap:', gLineGap)

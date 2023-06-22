@@ -3,10 +3,12 @@
 }
 
 img {
-    /* display: block; */
     width: 100%;
 }
 
 .main-meme-editor {
+    display: grid;
+    grid-column: 2;
     padding: 60px;
+    gap: 90px;
 }
