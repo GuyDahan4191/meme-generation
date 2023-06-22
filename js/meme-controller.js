@@ -12,6 +12,9 @@ function onInitMeme() {
     setCanvas()
     renderMeme()
     // addListeners()
+    setTimeout(() => {
+        document.querySelector('.line-input').focus()
+    }, 30);
 }
 
 ////////////////////////////////  render  ///////////////////////////////////
@@ -84,12 +87,14 @@ function onAddLine() {
     addLine()
     switchLine(1)
     document.querySelector('.line-input').value = ''
+    document.querySelector('.line-input').focus()
     renderMeme()
 }
 
 function onDeleteLine() {
     deleteLine()
     switchLine(1)
+    document.querySelector('.line-input').focus()
     renderMeme()
     document.querySelector('.line-input').value = getMeme().lines[getMeme().selectedLineIdx].txt
 }
@@ -101,6 +106,7 @@ function onMoveLine(diff) {
 
 function onSwitchLine(diff) {
     switchLine(diff)
+    document.querySelector('.line-input').focus()
     document.querySelector('.line-input').value = getMeme().lines[getMeme().selectedLineIdx].txt
     renderMeme()
 }

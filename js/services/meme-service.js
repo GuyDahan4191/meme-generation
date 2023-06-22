@@ -7,7 +7,7 @@ let gMeme = {
         txt: 'Enter text',
         size: 40,
         color: 'red',
-        pos: { x: 200, y: 20 },
+        pos: { x: 200, y: 40 },
         font: 'Impact',
         isChoosen: false,
         alignDirection: 'center'
@@ -17,6 +17,9 @@ let gCurrLine = 0
 let gLineGap = (gMeme.lines.length) * 50
 let gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
 const TOUCH_EVS = ['touchstart', 'touchmove', 'touchend']
+
+const STORAGE_KEY_MY_MEMES = 'savedMemesDB'
+const gMyMemes = loadMemes()
 
 /////////////////////////// set functions  ///////////////////////////
 
@@ -76,17 +79,11 @@ function drawImg(idx) {
 }
 
 function drawText(line, direction = 'center') {
-    // console.log('line.txt:', line.txt)
-    // console.log('line.size:', line.size)
-    // console.log('line.color:', line.color)
-    console.log('line.pos.y:', line.pos.y)
-    // console.log('gCtx:', gCtx)
-
     const y = line.pos.y
     // const x = line.pos.x
     const x = (gElCanvas.width / 2)
-    gCtx.lineWidth = 1
-    gCtx.strokeStyle = 'black'
+    gCtx.lineWidth =
+        gCtx.strokeStyle = 'black'
     if (getColor() !== '#ffffff') line.color = getColor()
     gCtx.fillStyle = line.color
     gCtx.font = `${line.size}px ${line.font}`
@@ -95,6 +92,21 @@ function drawText(line, direction = 'center') {
 
     gCtx.fillText(line.txt, x, y) // Draws (fills) a given text at the given (x, y) position.
     gCtx.strokeText(line.txt, x, y) // Draws (strokes) a given text at the given (x, y) position.
+    if (gMeme.lines[gMeme.selectedLineIdx] === line)
+        addRectOnLine(line.txt)
+}
+
+function addRectOnLine(text, download = false) {
+    let textWidth = gCtx.measureText(text).width;
+    let textHeight = gMeme.lines[gMeme.selectedLineIdx].size + 10
+    let rectPadding = 5;
+    let rect = {
+        x: getgElCanvas().width / 2 - textWidth / 2 - rectPadding,
+        y: (gMeme.lines[gMeme.selectedLineIdx].pos.y - (gMeme.lines[gMeme.selectedLineIdx].size / 2) - (rectPadding * 2)),
+        width: textWidth + rectPadding * 2,
+        height: textHeight + rectPadding * 2
+    }
+    gCtx.strokeRect(rect.x, rect.y, rect.width, rect.height)
 }
 
 ////////////////////////////  line tollbar  /////////////////////////
@@ -117,7 +129,7 @@ function addLine() {
         txt: 'Enter text',
         size: 40,
         color: 'red',
-        pos: { x: 200, y: 20 + (gMeme.lines.length) * 50 },
+        pos: { x: 200, y: 40 + (gMeme.lines.length) * 50 },
         font: 'Impact'
     })
     console.log('gLineGap:', gLineGap)
@@ -167,4 +179,22 @@ function setCurrPos(pos) {
 function setPrevPos(pos) {
     gDrawing.prevX = pos.x
     gDrawing.prevY = pos.y
+}
+
+////////////////////////////  save  /////////////////////////
+
+function saveMeme() {
+    gMeme.data = gElCanvas.toDataURL()
+    gSavedMemes.push(gMeme)
+    saveToStorage(STORAGE_KEY_MEMES, gSavedMemes)
+}
+
+function loadMemes() {
+    let memes = loadFromStorage(STORAGE_KEY_MY_MEMES)
+    if (!memes) memes = []
+    return memes
+}
+
+function getMyMemes() {
+    return gMyMemes
 }

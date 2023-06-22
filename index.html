@@ -32,72 +32,74 @@
             <div class="gallery-imgs grid"></div>
         </section>
 
-        <section class="main-section main-meme-editor">
-            <div class="canvas-container">
+        <section class="main-section main-meme-editor flex column align-center">
+            <section class="canvas-container flex column space-between">
                 <canvas id="my-canvas" height="400" width="400">
                 </canvas>
-            </div>
+            </section>
 
-            <div class="toolbar-container flex .flex-column">
-                <section>
-                    <section class="line flex">
-                        <input class="line-input" oninput="onSetLineTxt(this.value)" type="text" name="text"
-                            placeholder="Enter your text here">
+            <section class="toolbar-container flex column space-between">
 
-                        <label for="color">Fill Color: </label>
-                        <input type="color" class="clrFill flex space-between" name="clrFill" value="#ffffff"
+                <section class="line flex">
+                    <input class="line-input" oninput="onSetLineTxt(this.value)" type="text" name="text"
+                        placeholder="Enter your text here">
+
+                </section>
+
+                <section class="tollbar-btns flex-column">
+                    <section class="add flex">
+                        <input type="color" class="color-fill flex space-between" name="clrFill" value="#ffffff"
                             oninput="onPickFillColor(this.value)">
-                        <div>
-                            <button title="Add line" class="btn" onclick="onAddLine()"><i
-                                    class="fa-solid fa-plus"></i></button>
-                            <button title="Delete line" class="btn" onclick="onDeleteLine()"><i
-                                    class="fa-regular fa-trash-can"></i></button>
-                        </div>
-                        <div class="flex flex-column">
-                            <button title="Switch line UP" class="btn" onclick="onSwitchLine(+1)"><i
-                                    class="fa-solid fa-repeat"></i></button>
-                            <button title="Switch line Down" class="btn" onclick="onSwitchLine(-1)"><i
-                                    class="fa-solid fa-repeat fa-flip-horizontal"></i></button>
-
-                            <button title="Move line Up" class="btn" onclick="onMoveLine(-10)"><i
-                                    class="fa-solid fa-up-long"></i></button>
-                            <button title="Move line Down" class="btn" onclick="onMoveLine(10)"><i
-                                    class="fa-solid fa-down-long"></i></button>
-                        </div>
-                        <div>
-                            <button title="Increase size" class="btn" onclick="onChangeSize(5)"><i
-                                    class="fa-solid fa-font fa-xl"></i></button>
-                            <button title="Decrease size" class="btn" onclick="onChangeSize(-5)"><i
-                                    class="fa-solid fa-font fa-xs"></i></button>
-
-                            <button title="Text LTR" class="btn" onclick="onChangeTextAlign('LTR')"><i
-                                    class="fa-solid fa-align-left"></i></button>
-                            <button title="Text CENTER" class="btn" onclick="onChangeTextAlign('CENTER')"><i
-                                    class="fa-solid fa-align-center"></i></button>
-                            <button title="Text RTL" class="btn" onclick="onChangeTextAlign('RTL')"><i
-                                    class="fa-solid fa-align-right"></i></button>
-                        </div>
-                        <select title="Choose Font" class="font-select" placeholder="Impact"
+                        <select title="Choose Font" class="font-select btn" placeholder="Impact"
                             oninput="onFontChange(this.value)" title="font select">
                             <option value="impact">Impact</option>
                             <option value="arial">Arial</option>
                             <option value="Times New Roman">Times New Roman</option>
                         </select>
+                        <button title=" Add line" class="btn" onclick="onAddLine()"><i
+                                class="fa-solid fa-plus"></i></button>
+                        <button title="Delete line" class="btn" onclick="onDeleteLine()"><i
+                                class="fa-regular fa-trash-can"></i></button>
+                    </section>
 
+                    <section class="flex">
+                        <button title="Switch line UP" class="btn" onclick="onSwitchLine(+1)"><i
+                                class="fa-solid fa-repeat"></i></button>
+                        <button title="Switch line Down" class="btn" onclick="onSwitchLine(-1)"><i
+                                class="fa-solid fa-repeat fa-flip-horizontal"></i></button>
+
+                        <button title="Move line Up" class="btn" onclick="onMoveLine(-10)"><i
+                                class="fa-solid fa-up-long"></i></button>
+                        <button title="Move line Down" class="btn" onclick="onMoveLine(10)"><i
+                                class="fa-solid fa-down-long"></i></button>
                     </section>
-                    <section class="download-canvas">
-                        <!-- when click the link run downloadCanvas -->
-                        <a href="#" class="btn" onclick="onDownloadMeme(this)" download="my-meme.jpg">
-                            <button title="Download Meme" class="btn"><i class="fa-solid fa-download fa-2xl"></i>
-                            </button></a>
+
+                    <section class="flex">
+                        <button title="Increase size" class="btn" onclick="onChangeSize(5)"><i
+                                class="fa-solid fa-font fa-xl"></i></button>
+                        <button title="Decrease size" class="btn" onclick="onChangeSize(-5)"><i
+                                class="fa-solid fa-font fa-xs"></i></button>
+
+                        <button title="Text LTR" class="btn" onclick="onChangeTextAlign('LTR')"><i
+                                class="fa-solid fa-align-left"></i></button>
+                        <button title="Text CENTER" class="btn" onclick="onChangeTextAlign('CENTER')"><i
+                                class="fa-solid fa-align-center"></i></button>
+                        <button title="Text RTL" class="btn" onclick="onChangeTextAlign('RTL')"><i
+                                class="fa-solid fa-align-right"></i></button>
                     </section>
-                    <section class="facebook-upload">
-                        <button title="Share Meme on Facebook" class="btn" onclick="onUploadImg()"><i
-                                class="fa-brands fa-facebook fa-2xl"></i></button>
-                    </section>
+
+                </section>
+                <section class="download-canvas flex">
+                    <!-- when click the link run downloadCanvas -->
+                    <a href="#" class="btn" onclick="onDownloadMeme(this)" download="my-meme.jpg">
+                        <button title="Download Meme" class="btn"><i class="fa-solid fa-download fa-2xl"></i>
+                        </button></a>
+
+                    <button title="Share Meme on Facebook" class="share-btn btn" onclick="onUploadImg()"><i
+                            class="fa-brands fa-facebook fa-2xl"></i></button>
                 </section>
 
-            </div>
+            </section>
         </section>
 
         <section class="main-section main-my-memes">

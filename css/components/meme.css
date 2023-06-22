@@ -7,8 +7,44 @@ img {
 }
 
 .main-meme-editor {
-    display: grid;
+    position: relative;
     grid-column: 2;
     padding: 60px;
-    gap: 90px;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.toolbar-container {
+    background-color: rgb(3, 66, 66);
+    width: 400px;
+    height: 400px;
+    flex-direction: column;
+    flex-wrap: wrap
+}
+
+.toolbar-btns {
+    width: 500px;
+    flex-direction: column;
+    flex-wrap: wrap
+}
+
+.line-input {
+    height: 4rem;
+    width: 390px;
+    margin: 5px;
+}
+
+.color-fill {
+    height: 4rem;
+    width: 4rem;
+    margin: 5px;
+}
+
+.color-label {
+    height: 4rem;
+    width: 4rem;
+    text-align: center;
+    justify-items: center;
 }
