@@ -122,14 +122,20 @@ function getColor() {
     return gCurrFillColors
 }
 
-//////////////////////////////  download-Img  /////////////////////////
+////////////////////////////////  save meme  ///////////////////////////////
+
+function onSave() {
+
+}
+
+//////////////////////////////  download-Img  /////////////////////////////
 
 function onDownloadMeme(elLink) {
     const memeContent = gElCanvas.toDataURL('image/jpeg')
     elLink.href = memeContent
 }
 
-////////////////////////  on-Upload-to-facebook  /////////////////////
+////////////////////////  on-Upload-to-facebook  ////////////////////////
 
 function onUploadImg() {
     // Gets the image from the canvas

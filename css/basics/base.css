@@ -2,13 +2,13 @@
     box-sizing: border-box;
 }
 
-/* html {
-    font-family: , sans-serif;
-} */
-
 body {
     margin: 20px;
-    background-color: lightsalmon;
+    /* background-color: lightsalmon; */
+    background-image: url('/img/bcg2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 /* .line {
@@ -45,4 +45,10 @@ a {
 .share-btn:hover {
     background-color: var(--clrFacebook);
     color: white;
+}
+
+img:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    ;
 }

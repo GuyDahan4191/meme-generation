@@ -19,7 +19,7 @@
                     <li><a href="#" onclick="onDisplayCurrPage('.main-gallery')">Gallery</a></li>
                     <li><a href="#" onclick="onDisplayCurrPage('.main-my-memes')">My-Memes</a>
                     </li>
-                    <li><a href="#" onclick="onDisplayCurrPage('.main-about')">About</a></li>
+                    <li><a href="#" onclick="onDisplayCurrPage('.main-about'); typing()">About</a></li>
                 </ul>
             </nav>
         </div>
@@ -57,39 +57,42 @@
                             <option value="Times New Roman">Times New Roman</option>
                         </select>
                         <button title=" Add line" class="btn" onclick="onAddLine()"><i
-                                class="fa-solid fa-plus"></i></button>
+                                class="fa-solid fa-plus fa-xl"></i></button>
                         <button title="Delete line" class="btn" onclick="onDeleteLine()"><i
-                                class="fa-regular fa-trash-can"></i></button>
+                                class="fa-regular fa-trash-can fa-xl"></i></button>
                     </section>
 
                     <section class="flex">
                         <button title="Switch line UP" class="btn" onclick="onSwitchLine(+1)"><i
-                                class="fa-solid fa-repeat"></i></button>
+                                class="fa-solid fa-repeat fa-xl"></i></button>
                         <button title="Switch line Down" class="btn" onclick="onSwitchLine(-1)"><i
-                                class="fa-solid fa-repeat fa-flip-horizontal"></i></button>
+                                class="fa-solid fa-repeat fa-flip-horizontal fa-xl"></i></button>
 
                         <button title="Move line Up" class="btn" onclick="onMoveLine(-10)"><i
-                                class="fa-solid fa-up-long"></i></button>
+                                class="fa-solid fa-up-long fa-xl"></i></button>
                         <button title="Move line Down" class="btn" onclick="onMoveLine(10)"><i
-                                class="fa-solid fa-down-long"></i></button>
+                                class="fa-solid fa-down-long fa-xl"></i></button>
                     </section>
 
                     <section class="flex">
                         <button title="Increase size" class="btn" onclick="onChangeSize(5)"><i
-                                class="fa-solid fa-font fa-xl"></i></button>
+                                class="fa-solid fa-font fa-2xl"></i></button>
                         <button title="Decrease size" class="btn" onclick="onChangeSize(-5)"><i
                                 class="fa-solid fa-font fa-xs"></i></button>
 
                         <button title="Text LTR" class="btn" onclick="onChangeTextAlign('LTR')"><i
-                                class="fa-solid fa-align-left"></i></button>
+                                class="fa-solid fa-align-left fa-xl"></i></button>
                         <button title="Text CENTER" class="btn" onclick="onChangeTextAlign('CENTER')"><i
-                                class="fa-solid fa-align-center"></i></button>
+                                class="fa-solid fa-align-center fa-xl"></i></button>
                         <button title="Text RTL" class="btn" onclick="onChangeTextAlign('RTL')"><i
-                                class="fa-solid fa-align-right"></i></button>
+                                class="fa-solid fa-align-right fa-xl"></i></button>
                     </section>
 
                 </section>
                 <section class="download-canvas flex">
+                    <button title="Save Meme" class="save-meme btn" onclick="onSave()"><i
+                            class="fa-regular fa-floppy-disk fa-2xl"></i></button>
+
                     <!-- when click the link run downloadCanvas -->
                     <a href="#" class="btn" onclick="onDownloadMeme(this)" download="my-meme.jpg">
                         <button title="Download Meme" class="btn"><i class="fa-solid fa-download fa-2xl"></i>
@@ -106,8 +109,7 @@
             <div class="gallery-my-memes grid"></div>
         </section>
 
-        <section class="main-section main-about">
-            <p>This app was build by Guy Dahan in 2 days on 0 sleeping hours. Viva la Sprint</p>
+        <section class="main-section main-about" id="typing-text">
         </section>
     </main>
 
