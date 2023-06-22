@@ -15,7 +15,7 @@
     align-items: start;
 }
 
-.flex.column {
+.flex-column {
     flex-direction: column;
 }
 

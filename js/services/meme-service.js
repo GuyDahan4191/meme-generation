@@ -4,13 +4,16 @@ let gMeme = {
     selectedImgId: 5,
     selectedLineIdx: 0,
     lines: [{
-        txt: 'I sometimes eat Falafel',
+        txt: 'Enter text',
         size: 40,
         color: 'red',
         pos: { x: 200, y: 20 },
-        font: 'Impact'
+        font: 'Impact',
+        isChoosen: false,
+        alignDirection: 'center'
     }]
 }
+let gCurrLine = 0
 let gLineGap = (gMeme.lines.length) * 50
 let gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
 const TOUCH_EVS = ['touchstart', 'touchmove', 'touchend']
@@ -33,7 +36,8 @@ function getMeme() {
 }
 
 function getCurrLine() {
-    return gMeme.lines[gMeme.selectedLineIdx]
+    gCurrLine = gMeme.lines[gMeme.selectedLineIdx]
+    return gCurrLine
 }
 
 //////////////////////  handle the listeners  ///////////////////////
@@ -62,7 +66,7 @@ function addTouchListeners() {
 
 ////////////////////////////  draw  /////////////////////////
 
-function drawImg(idx,) {
+function drawImg(idx) {
     const img = new Image()
     img.src = `img/${idx}.jpg`
     img.onload = () => {
@@ -75,8 +79,11 @@ function drawText(line, direction = 'center') {
     console.log('line.txt:', line.txt)
     console.log('line.size:', line.size)
     console.log('line.color:', line.color)
+    console.log('line.pos.y:', line.pos.y)
     console.log('gCtx:', gCtx)
-    const y = 20
+
+    const y = line.pos.y + gMeme.selectedLineIdx * 50
+    // const x = line.pos.x
     const x = (gElCanvas.width / 2)
     gCtx.lineWidth = 1
     gCtx.strokeStyle = 'black'
@@ -93,22 +100,16 @@ function drawText(line, direction = 'center') {
 ////////////////////////////  line tollbar  /////////////////////////
 
 function changeSize(diff) {
-    if ((gMeme.lines[0].size < 5) && (diff < 0)) return
-    gMeme.lines[0].size += diff
+    if ((gMeme.lines[gMeme.selectedLineIdx].size < 5) && (diff < 0)) return
+    gMeme.lines[gMeme.selectedLineIdx].size += diff
 }
 
 function changeTextAlign(direction, canvas) {
-    const currLine = getCurrLine()
-    console.log('currLine:', currLine)
-    currLine.align = direction
-    if (direction === 'RTL') currLine.pos.x = canvas.width - 20
-    if (direction === 'CENTER') currLine.pos.x = canvas.width / 2
-    if (direction === 'LTR') currLine.pos.x = 20
-    console.log('canvas.width:', canvas.width)
+    gMeme.lines[gMeme.selectedLineIdx]['alignDirection'] = direction
 }
 
 function fontChange(newFont) {
-    gMeme.lines[0].font = newFont
+    gMeme.lines[gMeme.selectedLineIdx].font = newFont
 }
 
 function addLine() {
@@ -120,6 +121,20 @@ function addLine() {
         font: 'Impact'
     })
     console.log('gLineGap:', gLineGap)
+}
+
+function deleteLine() {
+    gMeme.lines.splice(gMeme.selectedLineIdx, 1)
+}
+
+function moveLine(diff) {
+    gMeme.lines[gMeme.selectedLineIdx].pos.y += diff
+}
+
+function switchLine(diff) {
+    gMeme.selectedLineIdx += diff
+    if (gMeme.selectedLineIdx < 0) gMeme.selectedLineIdx = gMeme.lines.length - 1
+    if (gMeme.selectedLineIdx > gMeme.lines.length - 1) gMeme.selectedLineIdx = 0
 }
 
 ////////////////////////////  get-pos  /////////////////////////

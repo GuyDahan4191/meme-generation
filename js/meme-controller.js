@@ -3,7 +3,7 @@
 let gElCanvas = {}
 let gCtx
 let gCurrFillColors = '#ffffff'
-let gCurrIdx
+let gCurrImgIdx
 
 ////////////////////////////////////  init  //////////////////////////////////
 
@@ -21,17 +21,16 @@ function renderMeme() {
     renderImg(meme.selectedImgId)
     setTimeout(() => {
         renderLines(meme)
-    }, 50);
+    }, 30);
 }
 
 function renderImg(idx) {
-    gCurrIdx = idx
+    gCurrImgIdx = idx
     drawImg(idx)
 }
 
 function renderLines(meme) {
-    const lines = meme.lines
-    lines.forEach((line) => {
+    meme.lines.forEach(line => {
         drawText(line)
     })
 }
@@ -53,6 +52,10 @@ function setCanvas() {
 
 function onClearCanvas() {
     renderImg(idx)
+}
+
+function getgElCanvas() {
+    return gElCanvas
 }
 
 /////////////////////////////  line toolbar  ////////////////////////////
@@ -79,6 +82,26 @@ function onFontChange(font) {
 
 function onAddLine() {
     addLine()
+    switchLine(1)
+    document.querySelector('.line-input').value = ''
+    renderMeme()
+}
+
+function onDeleteLine() {
+    deleteLine()
+    switchLine(1)
+    renderMeme()
+    document.querySelector('.line-input').value = getMeme().lines[getMeme().selectedLineIdx].txt
+}
+
+function onMoveLine(diff) {
+    moveLine(diff)
+    renderMeme()
+}
+
+function onSwitchLine(diff) {
+    switchLine(diff)
+    document.querySelector('.line-input').value = getMeme().lines[getMeme().selectedLineIdx].txt
     renderMeme()
 }
 

@@ -6,3 +6,7 @@ img {
     /* display: block; */
     width: 100%;
 }
+
+.main-meme-editor {
+    padding: 60px;
+}

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/8922fa1bdc.js" crossorigin="anonymous"></script>
     <title>Meme Generator</title>
 </head>
 
@@ -36,26 +37,45 @@
                 </canvas>
             </div>
 
-            <div class="toolbar-container flex">
+            <div class="toolbar-container flex .flex-column">
                 <section>
-                    <section class="line">
-                        <input oninput="onSetLineTxt(this.value)" type="text" name="text"
+                    <section class="line flex">
+                        <input class="line-input" oninput="onSetLineTxt(this.value)" type="text" name="text"
                             placeholder="Enter your text here">
 
                         <label for="color">Fill Color: </label>
-                        <input type="color" class="clrFill" name="clrFill" value="#ffffff"
+                        <input type="color" class="clrFill flex space-between" name="clrFill" value="#ffffff"
                             oninput="onPickFillColor(this.value)">
+                        <div>
+                            <button title="Add line" class="btn" onclick="onAddLine()"><i
+                                    class="fa-solid fa-plus"></i></button>
+                            <button title="Delete line" class="btn" onclick="onDeleteLine()"><i
+                                    class="fa-regular fa-trash-can"></i></button>
+                        </div>
+                        <div class="flex flex-column">
+                            <button title="Switch line UP" class="btn" onclick="onSwitchLine(+1)"><i
+                                    class="fa-solid fa-repeat"></i></button>
+                            <button title="Switch line Down" class="btn" onclick="onSwitchLine(-1)"><i
+                                    class="fa-solid fa-repeat fa-flip-horizontal"></i></button>
 
-                        <button title="Add line" class="btn" onclick="onAddLine()">Add line</button>
-                        <button title="Delete line" class="btn" onclick="onDeleteLine()">Delete line</button>
+                            <button title="Move line Up" class="btn" onclick="onMoveLine(-10)"><i
+                                    class="fa-solid fa-up-long"></i></button>
+                            <button title="Move line Down" class="btn" onclick="onMoveLine(10)"><i
+                                    class="fa-solid fa-down-long"></i></button>
+                        </div>
+                        <div>
+                            <button title="Increase size" class="btn" onclick="onChangeSize(5)"><i
+                                    class="fa-solid fa-font fa-xl"></i></button>
+                            <button title="Decrease size" class="btn" onclick="onChangeSize(-5)"><i
+                                    class="fa-solid fa-font fa-xs"></i></button>
 
-                        <button title="Increase size" class="btn" onclick="onChangeSize(5)">increase</button>
-                        <button title="Decrease size" class="btn" onclick="onChangeSize(-5)">decrease</button>
-
-                        <button title="Text LTR" class="btn" onclick="onChangeTextAlign('LTR')">LTR</button>
-                        <button title="Text CENTER" class="btn" onclick="onChangeTextAlign('CENTER')">CENTER</button>
-                        <button title="Text RTL" class="btn" onclick="onChangeTextAlign('RTL')">RTL</button>
-
+                            <button title="Text LTR" class="btn" onclick="onChangeTextAlign('LTR')"><i
+                                    class="fa-solid fa-align-left"></i></button>
+                            <button title="Text CENTER" class="btn" onclick="onChangeTextAlign('CENTER')"><i
+                                    class="fa-solid fa-align-center"></i></button>
+                            <button title="Text RTL" class="btn" onclick="onChangeTextAlign('RTL')"><i
+                                    class="fa-solid fa-align-right"></i></button>
+                        </div>
                         <select title="Choose Font" class="font-select" placeholder="Impact"
                             oninput="onFontChange(this.value)" title="font select">
                             <option value="impact">Impact</option>
@@ -67,12 +87,12 @@
                     <section class="download-canvas">
                         <!-- when click the link run downloadCanvas -->
                         <a href="#" class="btn" onclick="onDownloadMeme(this)" download="my-meme.jpg">
-                            <button title="Download Meme" class="btn">download
+                            <button title="Download Meme" class="btn"><i class="fa-solid fa-download fa-2xl"></i>
                             </button></a>
                     </section>
                     <section class="facebook-upload">
-                        <button title="Share Meme on Facebook" class="btn" onclick="onUploadImg()">share to
-                            facebook</button>
+                        <button title="Share Meme on Facebook" class="btn" onclick="onUploadImg()"><i
+                                class="fa-brands fa-facebook fa-2xl"></i></button>
                     </section>
                 </section>
 
