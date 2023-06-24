@@ -2,19 +2,14 @@
     box-sizing: border-box;
 }
 
-img {
-    width: 100%;
-}
-
 .main-meme-editor {
-    position: relative;
-    grid-column: 2;
-    padding: 60px;
-    gap: 40px;
     align-items: center;
     justify-content: center;
 }
 
+img {
+    width: 100%;
+}
 
 .toolbar-container {
     background-color: rgb(3, 66, 66);
@@ -47,4 +42,16 @@ img {
     width: 4rem;
     text-align: center;
     justify-items: center;
+}
+
+.download-btn a {
+    color: grey;
+}
+
+.download-btn:hover a {
+    color: black;
+}
+
+.font-select {
+    width: calc(8rem + 10px)
 }

@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-.gallery-imgs {
+.gallery-my-memes {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-auto-flow: dense;
 
@@ -14,5 +14,4 @@
 img {
     /* display: block; */
     width: 100%;
-    border-radius: 10px;
 }

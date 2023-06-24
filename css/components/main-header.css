@@ -1,31 +1,27 @@
 .main-header {
-    height: 130px;
-    background-color: darkgrey;
+    position: sticky;
+    top: 0px;
+    width: 100vW;
+    height: 80Px;
+    background-color: orange;
     box-shadow: inset 0 -6px 0 var(--clrPrimary-2);
     grid-auto-flow: column;
 }
 
 .main-header .logo {
     font-family: eurofurence;
-    font-size: 5em;
+    font-size: 1.5em;
     color: white;
 }
 
-.main-nav>li {
-    border-inline-start: 1px solid var(--clrPrimary-3);
-}
-
-.main-header .main-nav>li:last-child {
-    border-inline-end: 1px solid var(--clrPrimary-3);
-}
-
-.main-nav a {
+.main-nav li {
     display: flex;
+    margin-right: 20px;
     font-family: lato-bold;
     align-items: center;
     justify-content: center;
-    width: 131px;
-    height: 130px;
-    border-left: 1px solid var(--clrPrimary-3);
+    width: 80px;
+    height: 80px;
+    /* /* border-left: 1px solid var(--clrPrimary-3); */
     text-shadow: 0 1px 0 var(--clrPrimary-3);
 }

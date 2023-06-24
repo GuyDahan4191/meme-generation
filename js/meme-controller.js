@@ -2,16 +2,18 @@
 
 let gElCanvas = {}
 let gCtx
-let gCurrFillColors = '#ffffff'
+let gCurrFillColor = '#ffffff'
 let gCurrImgIdx
+let gIsDownLoad = false
+let gStartPos
+let gIsSave
 
 ////////////////////////////////////  init  //////////////////////////////////
 
 function onInitMeme() {
-    // resizeCanvas()
     setCanvas()
     renderMeme()
-    // addListeners()
+    addListeners()
     setTimeout(() => {
         document.querySelector('.line-input').focus()
     }, 30);
@@ -21,6 +23,7 @@ function onInitMeme() {
 
 function renderMeme() {
     const meme = getMeme()
+    // resizeCanvas()
     renderImg(meme.selectedImgId)
     setTimeout(() => {
         renderLines(meme)
@@ -42,7 +45,7 @@ function resizeCanvas() {
     const elContainer = document.querySelector('.canvas-container')
     console.log('elContainer.offsetWidth:', elContainer.offsetWidth)
     gElCanvas.width = elContainer.offsetWidth
-    gElCanvas.height = elContainer.offsetHeight
+    // gElCanvas.height = elContainer.offsetHeight
 }
 
 ////////////////////////////////  canvas  ////////////////////////////////
@@ -59,6 +62,10 @@ function onClearCanvas() {
 
 function getgElCanvas() {
     return gElCanvas
+}
+
+function onCanvasClicked(ev) {
+    canvasClicked(ev)
 }
 
 /////////////////////////////  line toolbar  ////////////////////////////
@@ -100,7 +107,7 @@ function onDeleteLine() {
 }
 
 function onMoveLine(diff) {
-    moveLine(diff)
+    moveLine(0, diff)
     renderMeme()
 }
 
@@ -114,25 +121,44 @@ function onSwitchLine(diff) {
 ////////////////////////////////  ev-colors  ////////////////////////////////
 
 function onPickFillColor(color) {
-    gCurrFillColors = color
+    gCurrFillColor = color
+    colorChange(color)
     renderMeme()
 }
 
 function getColor() {
-    return gCurrFillColors
+    return gCurrFillColor
 }
 
 ////////////////////////////////  save meme  ///////////////////////////////
 
-function onSave() {
+function onSaveMeme() {
+    gIsSave = true
+    renderMeme()
+    saveMeme()
+}
 
+function onloadMyMeme() {
+    // let memes = loadMemes()
+    renderSavedMemes()
 }
 
 //////////////////////////////  download-Img  /////////////////////////////
 
 function onDownloadMeme(elLink) {
-    const memeContent = gElCanvas.toDataURL('image/jpeg')
-    elLink.href = memeContent
+    gIsDownLoad = true
+    renderMeme()
+    setTimeout(() => {
+        console.log('startDownloas:')
+        const memeContent = gElCanvas.toDataURL('image/jpeg')
+        elLink.href = memeContent
+        gIsDownLoad = false
+        renderMeme()
+    }, 4000)
+}
+
+function isDownLoad() {
+    return gIsDownLoad
 }
 
 ////////////////////////  on-Upload-to-facebook  ////////////////////////
@@ -170,7 +196,7 @@ function doUploadImg(imgDataUrl, onSuccess) {
         // const url = XHR.responseText
 
         // If the response is ok, call the onSuccess callback function,
-        // that will create the link to facebook using the url we got
+        // that will create the link to facebook using the url we gotR
         console.log('Got back live url:', url)
         onSuccess(url)
     }
@@ -179,5 +205,67 @@ function doUploadImg(imgDataUrl, onSuccess) {
     }
     XHR.open('POST', '//ca-upload.com/here/upload.php')
     XHR.send(formData)
+}
+
+//////////////////////  handle the listeners  ///////////////////////
+
+function addListeners() {
+    addMouseListeners()
+    addTouchListeners()
+    //Listen for resize ev
+    window.addEventListener('resize', () => {
+        resizeCanvas()
+        renderMeme()
+    })
+}
+
+function addMouseListeners() {
+    gElCanvas.addEventListener('mousedown', onDown)
+    gElCanvas.addEventListener('mousemove', onMove)
+    gElCanvas.addEventListener('mouseup', onUp)
+}
+
+function addTouchListeners() {
+    gElCanvas.addEventListener('touchstart', onDown)
+    gElCanvas.addEventListener('touchmove', onMove)
+    gElCanvas.addEventListener('touchend', onUp)
+}
+
+//////////////////////  handle click & touch  ///////////////////////
+
+function onDown(ev) {
+    // Get the ev pos from mouse or touch
+    const pos = getEvPos(ev)
+    // console.log('pos', pos)
+    if (!isLineClicked(pos.x, pos.y)) return
+
+    setLineDrag(true)
+    console.log('checkkk:')
+    //Save the pos we start from
+    gStartPos = pos
+    document.body.style.cursor = 'grabbing'
+    renderMeme()
+}
+
+function onMove(ev) {
+    const currLine = getCurrLine()
+    if (!currLine.isDrag || currLine.isDrag === undefined) return
+
+    console.log('Moving the Line')
+
+    const pos = getEvPos(ev)
+    // Calc the delta, the diff we moved
+    const dx = pos.x - gStartPos.x
+    const dy = pos.y - gStartPos.y
+    moveLine(dx, dy)
+    // Save the last pos, we remember where we`ve been and move accordingly
+    gStartPos = pos
+    // The canvas is render again after every move
+    renderMeme()
+}
+
+function onUp() {
+    setLineDrag(false)
+    document.body.style.cursor = 'grab'
 }
 

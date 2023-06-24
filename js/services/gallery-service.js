@@ -1,8 +1,7 @@
 'use strict'
 
-const IMGS_KEY = 'imgsDB'
-var gFilterTxt = ''
-var gImgs = [
+let gFilterTxt = ''
+let gImgs = [
     { id: 1, url: `img/1.jpg`, keyWords: ['politician', 'expression', 'funny'] },
     { id: 2, url: `img/2.jpg`, keyWords: ['cute', 'animals', 'dog'] },
     { id: 3, url: `img/3.jpg`, keyWords: ['cute', 'baby', 'animals', 'dog'] },
@@ -28,3 +27,4 @@ var gImgs = [
 function getGalleryImages() {
     return gImgs
 }
+

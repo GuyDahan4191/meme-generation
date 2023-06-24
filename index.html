@@ -17,7 +17,7 @@
             <nav class="main-nav-container">
                 <ul class="main-nav flex clean-list">
                     <li><a href="#" onclick="onDisplayCurrPage('.main-gallery')">Gallery</a></li>
-                    <li><a href="#" onclick="onDisplayCurrPage('.main-my-memes')">My-Memes</a>
+                    <li><a href="#" onclick="onDisplayCurrPage('.main-my-memes'); onloadMyMeme()">My-Memes</a>
                     </li>
                     <li><a href="#" onclick="onDisplayCurrPage('.main-about'); typing()">About</a></li>
                 </ul>
@@ -29,12 +29,37 @@
     <main class="main-content">
 
         <section class="main-section main-gallery">
+            <!-- <div class="search-bar flex align-center space-between">
+                <div>
+                    <input class="search-input" oninput="onSetSearce(this.value)" type="search" name="text"
+                        placeholder="Search by keywords">
+                    <datalist id="images" class="images-data-list">
+                        <option value="funny">
+                        <option value="animal">
+                        <option value="bad">
+                        <option value="akward">
+                        <option value="happy">
+                        <option value="sad">
+                    </datalist>
+                </div>
+
+                <div class="key-words">
+                    <span onclick="onSearchKeyWord('', this)">All </span>
+                    <div class="words-container"></div>
+                    <span onclick="onOpenMoreKeyWord('', this)">More...</span>
+                </div>
+                <div class="btn-flexible"><button class="btn btn-gallery" onclick="onFlexible()">I'm
+                        Flexible</button></div>
+                <div><input type="file" class="file-input btn btn-gallery" name="image" onchange="onImgInput(event)" />
+                </div>
+            </div> -->
+
             <div class="gallery-imgs grid"></div>
         </section>
 
-        <section class="main-section main-meme-editor flex column align-center">
+        <section class="main-section main-meme-editor">
             <section class="canvas-container flex column space-between">
-                <canvas id="my-canvas" height="400" width="400">
+                <canvas id="my-canvas" height="400" width="400" onclick="onCanvasClicked(event)">
                 </canvas>
             </section>
 
@@ -47,7 +72,7 @@
                 </section>
 
                 <section class="tollbar-btns flex-column">
-                    <section class="add flex">
+                    <section class="add flex center">
                         <input type="color" class="color-fill flex space-between" name="clrFill" value="#ffffff"
                             oninput="onPickFillColor(this.value)">
                         <select title="Choose Font" class="font-select btn" placeholder="Impact"
@@ -62,7 +87,7 @@
                                 class="fa-regular fa-trash-can fa-xl"></i></button>
                     </section>
 
-                    <section class="flex">
+                    <section class="flex center">
                         <button title="Switch line UP" class="btn" onclick="onSwitchLine(+1)"><i
                                 class="fa-solid fa-repeat fa-xl"></i></button>
                         <button title="Switch line Down" class="btn" onclick="onSwitchLine(-1)"><i
@@ -74,7 +99,7 @@
                                 class="fa-solid fa-down-long fa-xl"></i></button>
                     </section>
 
-                    <section class="flex">
+                    <section class="flex center">
                         <button title="Increase size" class="btn" onclick="onChangeSize(5)"><i
                                 class="fa-solid fa-font fa-2xl"></i></button>
                         <button title="Decrease size" class="btn" onclick="onChangeSize(-5)"><i
@@ -89,14 +114,14 @@
                     </section>
 
                 </section>
-                <section class="download-canvas flex">
-                    <button title="Save Meme" class="save-meme btn" onclick="onSave()"><i
+                <section class="download-canvas flex center">
+                    <button title="Save Meme" class="save-meme btn" onclick="onSaveMeme()"><i
                             class="fa-regular fa-floppy-disk fa-2xl"></i></button>
 
                     <!-- when click the link run downloadCanvas -->
-                    <a href="#" class="btn" onclick="onDownloadMeme(this)" download="my-meme.jpg">
-                        <button title="Download Meme" class="btn"><i class="fa-solid fa-download fa-2xl"></i>
-                        </button></a>
+                    <button title="Download Meme" class="download-btn btn"><a href="#" onclick="onDownloadMeme(this)"
+                            download="my-meme.jpg"><i class="fa-solid fa-download fa-2xl"></i></a>
+                    </button>
 
                     <button title="Share Meme on Facebook" class="share-btn btn" onclick="onUploadImg()"><i
                             class="fa-brands fa-facebook fa-2xl"></i></button>
@@ -112,6 +137,20 @@
         <section class="main-section main-about" id="typing-text">
         </section>
     </main>
+
+    <footer class="main-footer">
+        <div class="main-footer-container .flex. align-center">
+            <div class="logo">Meme Generator</div>
+            <p>© 2023 meme-gen.com - coffee right - Guy Dahan</p>
+            <div class="social-links">
+                <ul class="social-links flex clean-list">
+                    <li><a class="facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a class="twitter" href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- <button class="btn-toggle-menu" onclick="toggleMenu()">☰</button> -->
+    </footer>
 
     <script src="js/services/storage-service.js"></script>
     <script src="js/services/utils-service.js"></script>

@@ -3,19 +3,16 @@
 }
 
 body {
-    margin: 20px;
     /* background-color: lightsalmon; */
+    display: flex;
+    flex-direction: column;
     background-image: url('/img/bcg2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    margin: 0px;
+    min-height: 100vh;
 }
-
-/* .line {
-    width: 300px;
-    height: 4rem;
-
-} */
 
 a {
     color: white;
@@ -28,17 +25,15 @@ a {
     height: 4rem;
     align-items: center;
     justify-content: center;
-    background-color: rgb(58, 243, 184);
+    background-color: whitesmoke;
+    color: gray;
     border-radius: 8px;
     margin: 5px;
 }
 
-/* .btn .add {
-    background-color: rgb(9, 145, 9);
-} */
-
 .btn:hover {
     background-color: lightgrey;
+    color: black;
     cursor: pointer;
 }
 
