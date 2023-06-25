@@ -39,7 +39,7 @@ function renderSavedMemes() {
 function onImgSelect(imgIdx) {
     setImg(imgIdx)
     onInitMeme()
-    onDisplayCurrPage('.main-meme-editor')
+    onDisplayCurrPage('.div-main-meme-editor')
 }
 
 function onDisplayCurrPage(currSectionClass) {
@@ -51,7 +51,7 @@ function onDisplayCurrPage(currSectionClass) {
 
 function onMemeSelect() {
     onInitMeme()
-    onDisplayCurrPage('.main-meme-editor')
+    onDisplayCurrPage('.div-main-meme-editor')
 }
 
 function onFlexible() {
@@ -64,7 +64,7 @@ function onFlexible() {
 //     setMeme(memeIdx)
 
 //     renderMeme()
-//     onDisplayCurrPage('.main-meme-editor')
+//     onDisplayCurrPage('.div-main-meme-editor')
 // }
 
 

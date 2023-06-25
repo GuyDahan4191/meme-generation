@@ -15,6 +15,25 @@ let gMeme = {
     }]
 }
 
+let gDefaultMeme = {
+    selectedImgId: 5,
+    selectedLineIdx: 0,
+    lines: [{
+        txt: 'Enter text',
+        size: 40,
+        color: 'white',
+        pos: { x: 200, y: 40 },
+        font: 'Impact',
+        isChoosen: false,
+        alignDirection: 'center',
+        isDrag: false
+    }]
+}
+
+function defaultMeme() {
+    gMeme = gDefaultMeme
+}
+
 let gCurrImg
 let gCurrLine = 0
 let gLineGap = (gMeme.lines.length) * 50

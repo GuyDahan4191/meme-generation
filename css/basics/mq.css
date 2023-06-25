@@ -1,9 +1,13 @@
 /* SMALL */
-@media(min-width: 470px) {
+@media(min-width: 300px) {
+
+    .gallery-imgs,
+    .gallery-my-memes {
+        padding: 20px 20PX;
+    }
 
     .main-meme-editor {
-        position: relative;
-        grid-column: 1;
+        display: flex;
         padding: 30px;
         gap: 20px;
         align-items: center;
@@ -36,8 +40,8 @@
     }
 
     .canvas-container {
-        width: 400px;
-        height: 400px;
+        width: 250px;
+        height: 250px;
         margin: 20px auto;
         padding: 0;
     }
@@ -45,11 +49,16 @@
     .toolbar-container {
         margin: auto;
     }
-
 }
 
 /* medium */
-@media(min-width: 680px) {
+@media(min-width: 870px) {
+
+    .gallery-imgs,
+    .gallery-my-memes {
+        padding: 40px 40PX;
+    }
+
     .main-header .logo {
         font-size: 2.5em;
         margin-left: 40px;
@@ -60,8 +69,8 @@
     }
 
     .main-meme-editor {
-        /* display: flex; */
-        position: relative;
+        display: flex;
+        /* position: relative; */
         grid-column: 2;
         padding: 60px;
         gap: 40px;
@@ -84,11 +93,10 @@
 
 /* large */
 @media(min-width: 1050px) {
-    .canvas-container {
-        width: 400px;
-        height: 400px;
-        margin: 20px auto;
-        padding: 0;
+
+    .gallery-imgs,
+    .gallery-my-memes {
+        padding: 40px 40PX;
     }
 
     .main-header .logo {
@@ -98,5 +106,41 @@
 
     .main-nav li {
         width: 120px;
+    }
+
+    .canvas-container {
+        width: 500px;
+        height: 500px;
+        margin: 20px auto;
+        padding: 0;
+    }
+
+    .toolbar-container {
+        width: 500px;
+        height: 500px;
+        margin: 20px;
+        padding: 0;
+    }
+
+    .line-input {
+        height: 4rem;
+        width: 460px;
+        margin: 20px;
+    }
+
+    .color-fill {
+        height: 5rem;
+        width: 5rem;
+        margin: 15px;
+    }
+
+    .color-label {
+        height: 5rem;
+        width: 5rem;
+    }
+
+    .btns {
+        height: 5rem;
+        width: 5rem;
     }
 }

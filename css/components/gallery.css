@@ -6,8 +6,7 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-auto-flow: dense;
 
-    padding-top: 80px;
-    padding: 80px 250px;
+    padding: 80px 80px;
     margin: 0 auto;
 }
 

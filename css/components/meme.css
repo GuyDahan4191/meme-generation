@@ -12,23 +12,23 @@ img {
 }
 
 .toolbar-container {
-    background-color: rgb(3, 66, 66);
+    background-color: #023047;
     width: 400px;
     height: 400px;
     flex-direction: column;
     flex-wrap: wrap
 }
 
-.toolbar-btns {
+/* .toolbar-btns {
     width: 500px;
     flex-direction: column;
     flex-wrap: wrap
-}
+} */
 
 .line-input {
     height: 4rem;
-    width: 390px;
-    margin: 5px;
+    width: 360px;
+    margin: 20px;
 }
 
 .color-fill {
@@ -54,4 +54,34 @@ img {
 
 .font-select {
     width: calc(8rem + 10px)
+}
+
+.btn-delete {
+    background-color: #ae2012;
+    color: white;
+}
+
+.btn-add {
+    background-color: green;
+    color: white;
+}
+
+.btn-switch {
+    background-color: #e9d8a6;
+    color: darkslategrey;
+}
+
+.btn-move {
+    background-color: #005f73;
+    color: white;
+}
+
+.btn-size {
+    background-color: #0a9396;
+    color: white;
+}
+
+.btn-align {
+    background-color: #94d2bd;
+    color: darkslategrey;
 }

@@ -12,6 +12,7 @@ let gIsSave
 
 function onInitMeme() {
     setCanvas()
+    // defaultMeme()
     renderMeme()
     addListeners()
     setTimeout(() => {
