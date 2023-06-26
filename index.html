@@ -29,30 +29,31 @@
     <main class="main-content">
 
         <section class="main-section main-gallery">
-            <!-- <div class="search-bar flex align-center space-between">
-                <div>
-                    <input class="search-input" oninput="onSetSearce(this.value)" type="search" name="text"
+            <div class="search-bar">
+                <div class="search-input">
+                    <input type="search" oninput="onSetSearce(this.value)" name="filter" list="categories"
                         placeholder="Search by keywords">
-                    <datalist id="images" class="images-data-list">
+                    <datalist id="categories" class="images-data-list">
+                        <option value="politician">
+                        <option value="expression">
                         <option value="funny">
-                        <option value="animal">
-                        <option value="bad">
-                        <option value="akward">
-                        <option value="happy">
-                        <option value="sad">
+                        <option value="cute">
+                        <option value="animals">
+                        <option value="dog">
+                        <option value="baby">
+                        <option value="cat">
+                        <option value="movie">
+                        <option value="laughter">
+                        <option value="serious">
+                        <option value="nerd">
                     </datalist>
                 </div>
 
-                <div class="key-words">
-                    <span onclick="onSearchKeyWord('', this)">All </span>
-                    <div class="words-container"></div>
-                    <span onclick="onOpenMoreKeyWord('', this)">More...</span>
-                </div>
-                <div class="btn-flexible"><button class="btn btn-gallery" onclick="onFlexible()">I'm
+                <!-- <div class="btn-flexible"><button class="btn btn-gallery" onclick="onFlexible()">I'm
                         Flexible</button></div>
                 <div><input type="file" class="file-input btn btn-gallery" name="image" onchange="onImgInput(event)" />
-                </div>
-            </div> -->
+                </div> -->
+            </div>
 
             <div class="gallery-imgs grid"></div>
         </section>
@@ -60,7 +61,7 @@
         <div class="main-section div-main-meme-editor">
             <section class="main-meme-editor flex">
                 <section class="canvas-container space-between">
-                    <canvas id="my-canvas" height="400" width="400" onclick="onCanvasClicked(event)">
+                    <canvas id="my-canvas" width="230" height="230" onclick="onCanvasClicked(event)">
                     </canvas>
                 </section>
 
@@ -74,7 +75,7 @@
 
                     <section class="tollbar-btns flex-column">
                         <section class="add flex center">
-                            <input type="color" class="color-fill flex space-between" name="clrFill" value="#ffffff"
+                            <input type="color" class="color-fill flex space-between btn" name="clrFill" value="#ffffff"
                                 oninput="onPickFillColor(this.value)">
                             <select title="Choose Font" class="font-select btn" placeholder="Impact"
                                 oninput="onFontChange(this.value)" title="font select">
@@ -100,7 +101,7 @@
                                     class="fa-solid fa-down-long fa-xl"></i></button>
                         </section>
 
-                        <section class="flex center">
+                        <section class="btn-size-align flex center">
                             <button title="Increase size" class="btn btn-size" onclick="onChangeSize(5)"><i
                                     class="fa-solid fa-font fa-2xl"></i></button>
                             <button title="Decrease size" class="btn btn-size" onclick="onChangeSize(-5)"><i
@@ -144,13 +145,13 @@
     <footer class="main-footer">
         <div class="main-footer-container .flex. align-center">
             <div class="logo">Meme Generator</div>
-            <p>© 2023 meme-gen.com - coffee right - Guy Dahan</p>
-            <div class="social-links">
+            <p>© 2023 - coffee right - Guy Dahan</p>
+            <!-- <div class="social-links">
                 <ul class="social-links flex clean-list">
                     <li><a class="facebook" href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
                     <li><a class="twitter" href="#"><i class="fa-brands fa-twitter"></i></a></li>
                 </ul>
-            </div>
+            </div> -->
         </div>
         <!-- <button class="btn-toggle-menu" onclick="toggleMenu()">☰</button> -->
     </footer>

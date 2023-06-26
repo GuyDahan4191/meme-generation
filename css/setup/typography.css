@@ -1,19 +1,19 @@
 @font-face {
     font-family: Impact, sans-serif;
-    src: url("fonts/impact.ttf");
+    src: url("/fonts/impact.ttf");
 }
 
 @font-face {
-    font-family: Arial, Helvetica, sans-serif;
-    src: url("fonts/impact.ttf");
+    font-family: 'roblox';
+    src: url("/fonts/roblox.ttf");
 }
 
 @font-face {
-    font-family: 'Times New Roman', Times, serif;
-    src: url("fonts/impact.ttf");
+    font-family: 'orbitron';
+    src: url("/fonts/orbitron.ttf");
 }
 
-/* @font-face {
-    font-family: 'Times New Roman', Times, serif;
-    src: url("fonts/impact.ttf");
-} */
+@font-face {
+    font-family: 'Monoton';
+    src: url("/fonts/Monoton.ttf");
+}

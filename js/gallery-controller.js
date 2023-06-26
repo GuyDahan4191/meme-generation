@@ -10,7 +10,8 @@ function onInit() {
 //////////////////////////////////  render  ////////////////////////////////
 
 function renderGallery() {
-    const imgs = getGalleryImages()
+    let imgs = getGalleryImages()
+    if (isFiltered()) imgs = getFilteredImgs()
     const strHTMLs = imgs.map((img, i) =>
         `<article class="img" onclick="onImgSelect(${i + 1})">
             <img class="img${i + 1}" src="${img.url}">
@@ -67,5 +68,12 @@ function onFlexible() {
 //     onDisplayCurrPage('.div-main-meme-editor')
 // }
 
+///////////////////////////  search  //////////////////////////////
 
+function onSetSearce(filter) {
+    setSearch(filter)
+    console.log(gFilteredGallery)
+    renderGallery(gFilteredGallery)
+    gFilter = false
+}
 

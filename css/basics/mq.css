@@ -1,21 +1,81 @@
-/* SMALL */
-@media(min-width: 300px) {
+/******************************* PHONE **********************************/
+@media(min-width: 0px) {
 
     .gallery-imgs,
     .gallery-my-memes {
-        padding: 20px 20PX;
+        padding: 20px 20px;
+    }
+
+    .main-header-container {
+        margin-bottom: 65px;
+    }
+
+    .main-header .logo {
+        font-size: 1.5em;
+        margin-left: 20px;
+    }
+
+    .main-nav li {
+        width: 75px;
+        margin: 0;
     }
 
     .main-meme-editor {
         display: flex;
-        padding: 30px;
-        gap: 20px;
-        align-items: center;
-        justify-content: center;
+        flex-direction: column;
+        padding: 40px;
+        gap: 10px;
     }
 
     .canvas-container {
-        margin: 15px;
+        width: 230px;
+        height: 230px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .toolbar-container {
+        margin: auto;
+        width: 230px;
+        height: 230px;
+    }
+
+    :root {
+        --btnSize: 2rem;
+    }
+
+    .line-input {
+        height: var(--btnSize);
+        width: 210px;
+        margin: 10px;
+    }
+
+    .btn,
+    .color-fill {
+        height: var(--btnSize);
+        width: var(--btnSize);
+        margin: 6px;
+    }
+
+    .font-select {
+        width: calc(var(--btnSize)*2.3);
+    }
+
+    .btn-switch {
+        width: calc(var(--btnSize)*1.65);
+    }
+}
+
+/******************************* SMALL **********************************/
+@media(min-width: 520px) {
+
+    .gallery-imgs,
+    .gallery-my-memes {
+        padding: 20px 20px;
+    }
+
+    .main-header-container {
+        margin-bottom: 65px;
     }
 
     .main-header .logo {
@@ -31,116 +91,309 @@
         margin-inline-start: 4rem;
     }
 
-    .main-meme-editor.toolbar-container {
-        margin-right: 6px;
+    .div-main-meme-editor {
+        margin: auto 20px;
+        height: 80vh;
+    }
+
+    .main-meme-editor {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        height: 50%;
+        width: 500px;
+        margin: 0 auto;
+    }
+
+    .canvas-container {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        margin: 0;
+        width: 230px;
+        height: 230px;
+    }
+
+    .toolbar-container {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        margin: auto;
+        width: 230px;
+        height: 230px;
+    }
+
+    :root {
+        --btnSize: 2rem;
+    }
+
+    .line-input {
+        height: var(--btnSize);
+        width: 210px;
+        margin: 10px;
+    }
+
+    .btn,
+    .color-fill {
+        height: var(--btnSize);
+        width: var(--btnSize);
+        margin: 6px;
+    }
+
+    .font-select {
+        width: calc(var(--btnSize)*2.3);
+    }
+
+    .btn-switch {
+        width: calc(var(--btnSize)*1.65);
+    }
+}
+
+/******************************* MEDIUM **********************************/
+@media(min-width: 700px) {
+
+    .gallery-imgs,
+    .gallery-my-memes {
+        padding: 20px 20px;
     }
 
     .main-header-container {
         margin-bottom: 65px;
     }
 
-    .canvas-container {
-        width: 250px;
-        height: 250px;
-        margin: 20px auto;
-        padding: 0;
-    }
-
-    .toolbar-container {
-        margin: auto;
-    }
-}
-
-/* medium */
-@media(min-width: 870px) {
-
-    .gallery-imgs,
-    .gallery-my-memes {
-        padding: 40px 40PX;
-    }
-
     .main-header .logo {
         font-size: 2.5em;
-        margin-left: 40px;
+        margin-left: 20px;
     }
 
     .main-nav li {
-        width: 100px;
+        width: 95px;
+    }
+
+    .main-header.logo {
+        margin-inline-start: 4rem;
+    }
+
+    .div-main-meme-editor {
+        margin: auto 20px;
+        height: 60vh;
     }
 
     .main-meme-editor {
         display: flex;
-        /* position: relative; */
-        grid-column: 2;
-        padding: 60px;
-        gap: 40px;
-        align-items: center;
-        justify-content: center;
+        flex-direction: row;
+        position: relative;
+        height: 50%;
+        width: 650px;
+        margin: 0 auto;
     }
 
     .canvas-container {
-        display: flex;
-        width: 400px;
-        height: 400px;
-        margin: 20px auto;
-        padding: 0;
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        margin: 0;
+        width: 300px;
+        height: 300px;
     }
 
     .toolbar-container {
-        display: flex;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        margin: auto;
+        width: 300px;
+        height: 300px;
+    }
+
+    :root {
+        --btnSize: 2.87rem;
+    }
+
+    .line-input {
+        height: var(--btnSize);
+        width: 280px;
+        margin: 10px;
+    }
+
+    .btn,
+    .color-fill {
+        height: var(--btnSize);
+        width: var(--btnSize);
+        margin: 6px;
+    }
+
+    .font-select {
+        width: calc(var(--btnSize)*2.3);
+    }
+
+    .btn-switch {
+        width: calc(var(--btnSize)*1.65);
     }
 }
 
-/* large */
-@media(min-width: 1050px) {
+/******************************* LARGE **********************************/
+@media(min-width: 900px) {
 
     .gallery-imgs,
     .gallery-my-memes {
-        padding: 40px 40PX;
+        padding: 20px 20px;
+    }
+
+    .main-header-container {
+        margin-bottom: 65px;
+    }
+
+    .main-header .logo {
+        font-size: 3em;
+        margin-left: 20px;
+    }
+
+    .main-nav li {
+        width: 105px;
+    }
+
+    .main-header.logo {
+        margin-inline-start: 4rem;
+    }
+
+    .div-main-meme-editor {
+        margin: auto 20px;
+        height: 40vh;
+    }
+
+    .main-meme-editor {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        height: 50%;
+        width: 860px;
+        margin: 0 auto;
+    }
+
+    .canvas-container {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        margin: 0;
+        width: 400px;
+        height: 400px;
+    }
+
+    .toolbar-container {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        margin: auto;
+        width: 400px;
+        height: 400px;
+    }
+
+    :root {
+        --btnSize: 4rem;
+    }
+
+    .line-input {
+        height: var(--btnSize);
+        width: 370px;
+        margin: 15px;
+    }
+
+    .btn,
+    .color-fill {
+        height: var(--btnSize);
+        width: var(--btnSize);
+        margin: 6px;
+    }
+
+    .font-select {
+        width: calc(var(--btnSize)*2.2);
+    }
+
+    .btn-switch {
+        width: calc(var(--btnSize)*1.6);
+    }
+}
+
+/******************************* X-LARGE **********************************/
+@media(min-width: 1100px) {
+
+    .gallery-imgs,
+    .gallery-my-memes {
+        padding: 20px 20px;
+    }
+
+    .main-header-container {
+        margin-bottom: 65px;
     }
 
     .main-header .logo {
         font-size: 3.5em;
-        margin-left: 60px;
+        margin-left: 20px;
     }
 
     .main-nav li {
-        width: 120px;
+        width: 115px;
+    }
+
+    .main-header.logo {
+        margin-inline-start: 4rem;
+    }
+
+    .div-main-meme-editor {
+        margin: auto 20px;
+        height: 20vh;
+    }
+
+    .main-meme-editor {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        /* height: 40%; */
+        width: 1050px;
+        margin: 0 auto;
     }
 
     .canvas-container {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        margin: 0;
         width: 500px;
         height: 500px;
-        margin: 20px auto;
-        padding: 0;
     }
 
     .toolbar-container {
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        margin: auto;
         width: 500px;
         height: 500px;
-        margin: 20px;
-        padding: 0;
+    }
+
+    :root {
+        --btnSize: 5.1rem;
     }
 
     .line-input {
-        height: 4rem;
-        width: 460px;
-        margin: 20px;
+        height: var(--btnSize);
+        width: 456px;
+        margin: 22px;
     }
 
+    .btn,
     .color-fill {
-        height: 5rem;
-        width: 5rem;
-        margin: 15px;
+        height: var(--btnSize);
+        width: var(--btnSize);
+        margin: 6px;
     }
 
-    .color-label {
-        height: 5rem;
-        width: 5rem;
+    .font-select {
+        width: calc(var(--btnSize)*2.15);
     }
 
-    .btns {
-        height: 5rem;
-        width: 5rem;
+    .btn-switch {
+        width: calc(var(--btnSize)*1.58);
     }
 }

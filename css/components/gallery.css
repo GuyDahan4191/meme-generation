@@ -3,7 +3,7 @@
 }
 
 .gallery-imgs {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     grid-auto-flow: dense;
 
     padding: 80px 80px;
@@ -14,4 +14,11 @@ img {
     /* display: block; */
     width: 100%;
     border-radius: 10px;
+}
+
+img:hover {
+    /* width: 105%; */
+    rotate: 3deg;
+    align-items: center;
+    justify-content: center;
 }

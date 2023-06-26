@@ -269,4 +269,3 @@ function onUp() {
     setLineDrag(false)
     document.body.style.cursor = 'grab'
 }
-

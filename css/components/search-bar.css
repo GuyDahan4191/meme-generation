@@ -1,0 +1,9 @@
+* {
+    box-sizing: border-box;
+}
+
+.search-input {
+    margin: 20px;
+    height: 1.5rem;
+    width: 15rem;
+}

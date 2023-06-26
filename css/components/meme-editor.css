@@ -11,24 +11,20 @@ img {
     width: 100%;
 }
 
-.toolbar-container {
-    background-color: #023047;
-    width: 400px;
-    height: 400px;
-    flex-direction: column;
-    flex-wrap: wrap
+#my-canvas {
+    border-radius: 10px;
 }
 
-/* .toolbar-btns {
-    width: 500px;
+.toolbar-container {
+    background-color: #023047;
     flex-direction: column;
-    flex-wrap: wrap
-} */
+    flex-wrap: wrap;
+    border-radius: 10px;
+}
 
 .line-input {
-    height: 4rem;
-    width: 360px;
-    margin: 20px;
+    height: var(--btnSize);
+    border-radius: 8px;
 }
 
 .color-fill {
@@ -62,7 +58,7 @@ img {
 }
 
 .btn-add {
-    background-color: green;
+    background-color: rgb(23, 158, 23);
     color: white;
 }
 

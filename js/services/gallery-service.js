@@ -1,6 +1,7 @@
 'use strict'
 
-let gFilterTxt = ''
+let gFilteredGallery
+let gFilter = false
 let gImgs = [
     { id: 1, url: `img/1.jpg`, keyWords: ['politician', 'expression', 'funny'] },
     { id: 2, url: `img/2.jpg`, keyWords: ['cute', 'animals', 'dog'] },
@@ -28,3 +29,30 @@ function getGalleryImages() {
     return gImgs
 }
 
+///////////////////////////  search  //////////////////////////////
+
+function setSearch(filter) {
+    gFilter = true
+    gFilteredGallery = []
+    if (filter === '') {
+        for (var i = 0; i < gImgs.length; i++) {
+            gFilteredGallery.push(gImgs[i])
+        }
+    } else {
+        console.log('filter:', filter)
+        for (var i = 0; i < gImgs.length; i++) {
+            for (var j = 0; j < gImgs[i].keyWords.length; j++) {
+                if (gImgs[i].keyWords[j] === filter) gFilteredGallery.push(gImgs[i])
+            }
+        }
+        return gFilteredGallery
+    }
+}
+
+function isFiltered() {
+    return gFilter
+}
+
+function getFilteredImgs() {
+    return gFilteredGallery
+}
